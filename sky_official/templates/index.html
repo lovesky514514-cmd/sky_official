@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero hero-upgraded">
+    <meta charset="UTF-8">
+    <div class="container hero-grid">
+        <div class="hero-text fade-in">
+            <span class="badge">个人项目展示站</span>
+            <h1>让AI不止会说话，<br>更真正记住你</h1>
+            <p>
+                SKY蓝天是一项基于记忆精炼技术的长期记忆AI陪伴项目，
+                旨在探索更有温度、更具连续性、更懂用户的智能陪伴体验。
+            </p>
+
+            <div class="hero-buttons">
+                <a href="/product" class="btn btn-primary">查看产品介绍</a>
+                <a href="/author" class="btn btn-secondary">了解作者</a>
+            </div>
+
+            <div class="hero-tags">
+                <span>长期记忆</span>
+                <span>人格画像</span>
+                <span>智能遗忘</span>
+                <span>项目展示</span>
+            </div>
+        </div>
+
+        <div class="hero-panel fade-in">
+            <div class="profile-card">
+                <img src="{{ url_for('static', filename='images/author.jpg') }}" alt="作者头像" class="avatar-image">
+                <h3>作者 / 项目负责人</h3>
+                <p>张璐 · 长春理工大学</p>
+                <p class="muted-text">
+                    当前围绕“AI长期记忆管理”“个性化陪伴交互”和“记忆精炼机制”开展项目设计与实践。
+                </p>
+                <div class="profile-actions">
+                    <a href="/contact" class="btn btn-primary small-btn">联系我</a>
+                    <a href="#download" class="btn btn-secondary small-btn">下载入口</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="download">
+    <div class="container">
+        <div class="download-box fade-in">
+            <div>
+                <h2>下载 / 演示入口</h2>
+                <p>
+                    该区域用于放置项目说明书下载、演示视频入口、系统试用链接或后续安装包下载地址。
+                    当前已接入项目说明书下载按钮和演示入口按钮。
+                </p>
+            </div>
+            <div class="download-actions">
+                <a href="{{ url_for('static', filename='files/sky_manual.pdf') }}" class="btn btn-primary" download>
+                    下载项目说明书
+                </a>
+                <a href="https://space.bilibili.com/500897193?spm_id_from=333.1007.0.0" class="btn btn-secondary" target="_blank">
+                    查看演示入口
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-light">
+    <div class="container">
+        <h2 class="section-title">成果展示</h2>
+        <div class="achievement-grid">
+            {% for item in achievements %}
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">★</div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">项目流程</h2>
+        <div class="timeline">
+            {% for step in workflow_steps %}
+            <div class="timeline-item fade-in">
+                <div class="timeline-number">{{ loop.index }}</div>
+                <div class="timeline-content">
+                    <p>{{ step }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-light">
+    <div class="container">
+        <h2 class="section-title">界面展示</h2>
+        <p class="section-desc">
+            下面为临时图片展示，后续将替换成真实项目图片。
+        </p>
+
+        <div class="showcase-grid">
+            {% for item in demo_images %}
+            <div class="showcase-card fade-in">
+                <div class="showcase-thumb real-image-box">
+                    <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}" class="showcase-image">
+                    <span class="image-tag">{{ item.tag }}</span>
+                </div>
+                <div class="showcase-body">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section" id="download">
+    <div class="container">
+        <div class="download-box fade-in">
+            <div>
+                <h2>下载 / 演示入口</h2>
+                <p>
+                    该区域可用于放置项目说明书下载、演示视频入口、系统试用链接或后续安装包下载地址。
+                    目前先作为展示位保留，后续你可以替换成真实链接。
+                </p>
+            </div>
+            <div class="download-actions">
+                <a href="#" class="btn btn-primary">下载项目说明书</a>
+                <a href="#" class="btn btn-secondary">查看演示入口</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

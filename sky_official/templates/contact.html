@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-banner">
+    <meta charset="UTF-8">
+    <div class="container">
+        <h1>联系我</h1>
+        <p>欢迎交流项目展示、学习讨论、合作建议与成果整理</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container contact-layout">
+        <div class="single-card fade-in">
+            <h2>联系信息</h2>
+            <p><strong>项目名称：</strong>SKY蓝天</p>
+            <p><strong>作者：</strong>张璐</p>
+            <p><strong>邮箱：</strong>sukoya_zhang.cc@foxmail.com</p>
+            <p><strong>说明：</strong>本页面可作为项目展示、官网联系页与软著辅助截图页面使用。</p>
+        </div>
+
+        <div class="single-card fade-in">
+            <h2>在线留言</h2>
+
+            {% if message %}
+            <div class="form-message">{{ message }}</div>
+            {% endif %}
+
+            <form method="post" class="contact-form">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" placeholder="请输入你的姓名">
+
+                <label for="email">邮箱</label>
+                <input type="email" id="email" name="email" placeholder="请输入你的邮箱">
+
+                <label for="content">留言内容</label>
+                <textarea id="content" name="content" rows="5" placeholder="请输入留言内容"></textarea>
+
+                <button type="submit" class="btn btn-primary">提交留言</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

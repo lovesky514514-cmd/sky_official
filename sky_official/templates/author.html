@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-banner">
+    <meta charset="UTF-8">
+    <div class="container">
+        <h1>作者介绍</h1>
+        <p>个人项目展示、研究兴趣与实践方向说明</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container author-layout">
+        <div class="author-side fade-in">
+            <div class="author-photo-box">
+                <img src="{{ url_for('static', filename='images/author.jpg') }}" alt="作者照片" class="author-photo">
+            </div>
+        </div>
+
+        <div class="author-main fade-in">
+            <div class="single-card">
+                <h2>关于作者</h2>
+                <p>
+                    我是张璐，长春理工大学本科生，目前围绕“AI长期记忆管理”“个性化陪伴交互”
+                    和“记忆精炼机制”开展项目设计与内容整理。
+                </p>
+                <p>
+                    “SKY蓝天”是我当前重点推进的个人项目之一，
+                    主要面向长期记忆AI陪伴方向，强调记忆连续性、个性化理解与信息精炼管理。
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-light">
+    <div class="container">
+        <div class="single-card fade-in">
+            <h2>我的工作内容</h2>
+            <p>1. 项目整体构思与展示内容整理</p>
+            <p>2. 产品逻辑设计与页面框架搭建</p>
+            <p>3. 官网展示系统规划与实现</p>
+            <p>4. 软著方向整理与后续系统开发准备</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="single-card fade-in">
+            <h2>当前阶段说明</h2>
+            <p>
+                目前官网主要承担项目展示、内容整理和成果包装作用，
+                后续还可继续扩展为界面展示平台、演示入口与说明书下载页。
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
